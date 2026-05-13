@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>국힙 고사 119 리믹스 영역</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="exam-shell">
+      <section id="introScreen" class="intro-screen">
+        <p class="exam-label">국힙 고사</p>
+        <h1>119 리믹스 영역</h1>
+        <dl class="exam-meta">
+          <div>
+            <dt>문항 수</dt>
+            <dd>25문항</dd>
+          </div>
+          <div>
+            <dt>문항 형식</dt>
+            <dd>5지선다</dd>
+          </div>
+          <div>
+            <dt>기본 배점</dt>
+            <dd>40점</dd>
+          </div>
+        </dl>
+        <button id="startButton" class="primary-button" type="button">시험 시작</button>
+      </section>
+
+      <section id="examScreen" class="exam-screen hidden" aria-live="polite">
+        <header class="exam-header">
+          <div>
+            <p class="exam-label">119 리믹스 영역</p>
+            <h2 id="questionNumber">문항 1</h2>
+          </div>
+          <div class="timer-box">
+            <span id="timerText">0.00초</span>
+            <small>경과 시간</small>
+          </div>
+        </header>
+
+        <div class="progress-track" aria-hidden="true">
+          <span id="progressBar"></span>
+        </div>
+
+        <article class="question-area">
+          <div class="question-kicker" id="questionType">순서 배열</div>
+          <p id="questionText" class="question-text"></p>
+          <pre id="lyricsBox" class="lyrics-box hidden"></pre>
+          <ol id="choicesList" class="choices-list"></ol>
+        </article>
+
+        <footer class="exam-actions">
+          <button id="quitButton" class="ghost-button" type="button">중도 포기</button>
+          <button id="submitButton" class="primary-button" type="button" disabled>정답 제출</button>
+          <button id="nextButton" class="primary-button hidden" type="button">다음 문항</button>
+        </footer>
+      </section>
+    </main>
+
+    <section id="reportLayer" class="report-layer hidden" role="dialog" aria-modal="true" aria-labelledby="reportTitle">
+      <div class="report-card">
+        <p class="exam-label">성적표</p>
+        <h2 id="reportTitle">119 리믹스 영역 결과</h2>
+        <div class="grade-mark" id="gradeMark">A</div>
+        <p class="score-line"><strong id="scoreText">0.00점</strong> / 1000점</p>
+        <p id="reportSummary" class="report-summary"></p>
+        <div class="report-actions">
+          <button id="restartButton" class="primary-button" type="button">다시 풀기</button>
+        </div>
+      </div>
+    </section>
+
+    <script type="module" src="./quiz.js"></script>
+  </body>
+</html>
